@@ -6,7 +6,7 @@
   "parameters": [
     {
       "type": "text",
-      "label": "First Name",
+      "label": "First Name.",
       "name": "first_name",
       "help_text": "Enter your first name.",
       "default": "Paul"
