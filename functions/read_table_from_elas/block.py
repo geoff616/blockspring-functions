@@ -59,8 +59,6 @@ def read_table_from_es(request, response):
     ## Build the URL to query
     url = address + '/' + index + '/_search' 
     #json_query = dumps(es_query)
-    print url
-    print es_query
     req = requests.post(url, es_query)
 
     results = []
@@ -77,7 +75,7 @@ def read_table_from_es(request, response):
                     #Logic to determine column headers
                     #Note: this is tricky because there isn't a guarantee that all docs will have the same headers!
                     #Naive way is to loop through the results twice... Maybe use pandas?
-                    result_keys = result.keys()
+                    result_keys = result['_source'].keys()
                     field_set = set(fields_in_docs)
                     for key in result_keys:
                         if key not in field_set:
