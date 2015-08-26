@@ -20,8 +20,11 @@ import time
 def build_fields(fields):
     #if the value was entered, build the fancy thing to add to the es_query
     if fields:
-        field_array = fields.split(', ')
-        to_return = ', "fields": ' + str(field_array) 
+        if ',' in fields:
+            field_array = fields.split(', ')
+            to_return = ', "fields": ' + str(field_array)
+        else  
+            to_return = ', "fields": ' + fields
     #no fields
     else:
         to_return = ''
@@ -38,7 +41,7 @@ def read_table_from_es(request, response):
     ## Params for ES query
     size = request.params['size']
     query_string = request.params['query_string']
-    fields = request.params['fields']    
+    fields = build_fields(request.params['fields'])
 
     ## Define the ElasticSearch Query
 
