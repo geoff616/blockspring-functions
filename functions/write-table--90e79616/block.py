@@ -42,7 +42,6 @@ def write_table_to_es(request, response):
     ## Array to track if writes succeeded
     ## TODO: Better error handling
     write_status = []
-    write_status.append([])
 
     ## Index each row as a document
     for row in rows:
@@ -56,14 +55,13 @@ def write_table_to_es(request, response):
         url = address + '/' + index + '/' + datatype + '/'
         json_doc = dumps(doc)
         req = requests.post(url, json_doc)
-        print req.ok
 
         ## Keep track of which writes were sucessful 
 
         if req.ok == True:
-             write_status[0].append('True')
+             write_status.append(['True'])
         else:
-            write_status[0].append('Fail')
+            write_status.append(['Fail'])
 
         ##Add array of statuses to response 
         response.addOutput("Indexed", write_status)
