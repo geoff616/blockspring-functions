@@ -2,7 +2,7 @@
 ###### This function takes an elasticsearch querystring query and returns a table of the results
 ######
 ###### Arguments:
-######     address: Location and port of the Elasticsearch instance - 127.0.0.1:9300
+######     address: Location and port of the Elasticsearch instance - 127.0.0.1:9200
 ######     index: The Elasticsearch index(es) to read from - ecommerce_store_data or 2015-01-01,2015-01-02
 ######     size: The number of rows to return to the table - 1000
 ######     query_string: The Elasticsearch query that will return the desired documents - _type:sales_by_day AND store_location:(10001 10002)
@@ -34,6 +34,8 @@ def read_table_from_es(request, response):
 
     ## Where is ES?
     address = request.params['address']
+
+    index = request.params['index']
 
     ## Params for ES query
     size = request.params['size']
