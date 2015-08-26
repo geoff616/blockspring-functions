@@ -41,7 +41,7 @@ def write_table_to_es(request, response):
 
     ## Array to track if writes succeeded
     ## TODO: Better error handling
-    write_status = []
+    write_status = [[]]
 
 
 
@@ -62,9 +62,9 @@ def write_table_to_es(request, response):
         ## Keep track of which writes were sucessful 
 
         if req.ok == True:
-             write_status.append(['True'])
+             write_status[0].append('True')
         else:
-            write_status.append(['ERROR'])
+            write_status[0].append('ERROR')
 
         ##Add array of statuses to response 
         response.addOutput("Indexed", write_status)
