@@ -41,9 +41,7 @@ def write_table_to_es(request, response):
 
     ## Array to track if writes succeeded
     ## TODO: Better error handling
-    write_status = [[]]
-
-
+    write_status = []
 
     ## Index each row as a document
     for row in rows:
