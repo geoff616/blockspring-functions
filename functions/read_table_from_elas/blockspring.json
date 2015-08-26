@@ -1,27 +1,48 @@
 {
   "id": "6a03511922038c3a6394d53cf0bef0ec",
   "user": "geoff616",
-  "title": "read_table_from_elasticsearch",
+  "title": "Read Table From Elasticsearch",
   "description": "",
   "parameters": [
     {
+      "label": "",
+      "name": "address",
       "type": "text",
-      "label": "First Name",
-      "name": "first_name",
-      "help_text": "Enter your first name.",
-      "default": "Paul"
+      "optional": false,
+      "default": "http://127.0.0.1:9200"
     },
     {
+      "label": "",
+      "name": "index",
+      "type": "text",
+      "optional": false,
+      "default": "test-index"
+    },
+    {
+      "label": "",
+      "name": "size",
       "type": "number",
-      "label": "Age",
-      "name": "age",
-      "help_text": "Enter your age.",
-      "default": 26
+      "optional": false,
+      "default": "100"
+    },
+    {
+      "label": "",
+      "name": "query_string",
+      "type": "text",
+      "optional": false,
+      "default": "_type:sales_by_day AND store_location:(10001 10002)"
+    },
+    {
+      "label": "",
+      "name": "fields",
+      "type": "text",
+      "optional": false,
+      "default": "name"
     }
   ],
   "is_public": true,
   "is_open_source": true,
   "language": "py",
-  "updated_at": 1440558839,
+  "updated_at": 1440558918,
   "created_at": 1440558209
 }
