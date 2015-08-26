@@ -55,6 +55,8 @@ def read_table_from_es(request, response):
     ## Build the URL to query
     url = address + '/' + index + '/_search' 
     json_query = dumps(es_query)
+    print url
+    print es_query
     req = requests.post(url, json_query)
 
     results = []
