@@ -59,9 +59,9 @@ def write_table_to_es(request, response):
         ## Keep track of which writes were sucessful 
 
         if req.ok == True:
-             write_status.append(['True'])
+             write_status.append([url, 'True'])
         else:
-            write_status.append(['Fail'])
+            write_status.append([url, 'Fail'])
 
         ##Add array of statuses to response 
         response.addOutput("Indexed", write_status)
