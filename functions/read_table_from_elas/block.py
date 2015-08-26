@@ -23,7 +23,7 @@ def build_fields(fields):
         if ',' in fields:
             field_array = fields.split(', ')
             to_return = ', "fields": ' + str(field_array)
-        else  
+        else:  
             to_return = ', "fields": ' + fields
     #no fields
     else:
