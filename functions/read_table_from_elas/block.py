@@ -46,7 +46,7 @@ def read_table_from_es(request, response):
     ## Define the ElasticSearch Query
 
     es_query = """{
-      "size": %s
+      "size": %s,
       "query": {
         "query_string": {
           "query": "%s"
