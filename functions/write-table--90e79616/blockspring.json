@@ -1,0 +1,58 @@
+{
+  "id": "90e79616e423225c856b8b8fd994942f",
+  "user": "geoff616",
+  "title": "Write Table To Elasticsearch",
+  "description": "",
+  "parameters": [
+    {
+      "label": "Address",
+      "name": "address",
+      "type": "text",
+      "optional": false,
+      "default": "https://www.yourserver.com:9200"
+    },
+    {
+      "label": "Index",
+      "name": "index",
+      "type": "text",
+      "optional": false,
+      "default": "ecommerce_store_data"
+    },
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "text",
+      "optional": false,
+      "default": "monthly_revenue_by_product_category"
+    },
+    {
+      "label": "Documents",
+      "name": "documents",
+      "type": "spreadsheet",
+      "optional": false,
+      "default": [
+        [
+          "Product Type",
+          "Sales"
+        ],
+        [
+          "Red Shoes",
+          "87"
+        ],
+        [
+          "Blue Shoes",
+          "98"
+        ],
+        [
+          "Green Shoes",
+          "234"
+        ]
+      ]
+    }
+  ],
+  "is_public": true,
+  "is_open_source": true,
+  "language": "py",
+  "updated_at": 1439311294,
+  "created_at": 1438482419
+}
