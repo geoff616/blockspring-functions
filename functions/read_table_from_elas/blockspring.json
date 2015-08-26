@@ -2,7 +2,7 @@
   "id": "6a03511922038c3a6394d53cf0bef0ec",
   "user": "geoff616",
   "title": "Read Table From Elasticsearch",
-  "description": "",
+  "description": "You Know, for Search",
   "parameters": [
     {
       "label": "",
@@ -43,6 +43,6 @@
   "is_public": true,
   "is_open_source": true,
   "language": "py",
-  "updated_at": 1440560083,
+  "updated_at": 1440560424,
   "created_at": 1440558209
 }
