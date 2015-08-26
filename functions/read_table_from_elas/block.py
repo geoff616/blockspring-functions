@@ -16,7 +16,8 @@ import time
 
 
 ## Helper function that takes a list of fields like 'cat, dog, frog' and returns ', "fields":["cat", "dog", "frog"]' so ES will be happy
-## TODO: Confirm the quotes in str(field_array) are espcaing properly!
+## TODO: This isn't working correctly!!! Quotes need to be double quotes (not single) :/
+## I think the solution is to just build the whole query as a python object and then convert to JSON!
 def build_fields(fields):
     #if the value was entered, build the fancy thing to add to the es_query
     if fields:
@@ -24,7 +25,7 @@ def build_fields(fields):
             field_array = fields.split(', ')
             to_return = ', "fields": ' + str(field_array)
         else:  
-            to_return = ', "fields": ' + fields
+            to_return = ', "fields": ' + [fields]
     #no fields
     else:
         to_return = ''
