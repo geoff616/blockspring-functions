@@ -1,8 +1,6 @@
 ###### Get 13F Data
 ###### This function returns data from the jivedata detail API for 13f filings 
 ###### from the endpoint: http://api.jivedata.com/13F/detail/?cik={{cik}}
-###### What does thsi data look like? More info?
-###### 
 ######  
 ###### Arguments:
 ######     cik: fund identifier //string
@@ -12,7 +10,7 @@ import blockspring
 import requests
 from json import dumps, loads
 
-## Helper function to 
+## Helper function to query jivedata API
 def query_jive(cik):
     url = 'https://api.jivedata.com/13F/detail/?cik=' + cik
     get = requests.get(url, verify=False)
@@ -31,6 +29,7 @@ def get_13f_data(request, response):
     results = loads(query)['_results_']
 
     ## need to turn a nested JSON into array of arrays 
+    ## hardcoding keys below
     first_key = 'date'
 
     ## interesting data is in _holdings_ which is an array of dicts with the keys listed
@@ -68,5 +67,5 @@ def get_13f_data(request, response):
     ## Return the response
     response.end()
 
-## Defining write_to_es function for blockspring
+## Defining get_13f_data function for blockspring
 blockspring.define(get_13f_data)
