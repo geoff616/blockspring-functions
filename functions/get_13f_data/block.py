@@ -17,7 +17,7 @@ def query_jive(cik):
     url = 'http://api.jivedata.com/13F/detail/?cik=' + cik
     get = requests.get(url)
     if get.status_code == requests.codes.ok:
-        return get.text()
+        return get.text
     else:
         return "Error of some sort"
 
