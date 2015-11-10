@@ -1,0 +1,17 @@
+{
+  "user": "geoff616",
+  "title": "Get 13F Data",
+  "description": "",
+  "parameters": [
+    {
+      "label": "",
+      "name": "cik",
+      "type": "text",
+      "optional": false,
+      "default": "1540531"
+    }
+  ],
+  "is_public": true,
+  "is_open_source": true,
+  "language": "py"
+}
