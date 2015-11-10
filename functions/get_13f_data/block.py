@@ -41,7 +41,6 @@ def get_13f_data(request, response):
         '_summary_': ['total_value', 'others', 'entries'] 
     }
 
-
     columns = [first_key] + inner_keys['_holdings_']
     
     #start building return array with column headers as first row
@@ -49,7 +48,7 @@ def get_13f_data(request, response):
 
     #add a row for each holding
     for date in results.keys():
-        holdings = results[date]['_signature_']
+        holdings = results[date]['_holdings_']
         for holding in holdings:
             row = []
             row.append(date)
