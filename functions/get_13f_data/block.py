@@ -27,10 +27,14 @@ def get_13f_data(request, response):
     ## pass cik to query function
     cik = request.params['cik']
     query = query_jive(cik)
-    
-    ## Add JSON to output
-    ## TODO: format 
-    response.addOutput("results", query)
+
+    results = loads(query)['_results_']
+    to_return = []
+    for date in results.keys():
+        to_return.append([date, str(results[date])])
+
+
+    response.addOutput("results", to_return)
 
     ## Return the response
     response.end()
