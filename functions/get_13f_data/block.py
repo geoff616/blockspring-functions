@@ -14,7 +14,7 @@ from json import dumps, loads
 
 ## Helper function to 
 def query_jive(cik):
-    url = 'http://api.jivedata.com/13F/detail/?cik=' + cik
+    url = 'https://api.jivedata.com/13F/detail/?cik=' + cik
     get = requests.get(url)
     if get.status_code == requests.codes.ok:
         return get.text
